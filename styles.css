@@ -56,14 +56,15 @@ nav a:hover { text-decoration: underline; }
 .accent { color: var(--gold); }
 h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; }
 h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.015; letter-spacing: -.025em; }
-h1 em { font-style: normal; font-synthesis: none; display: inline-block; transform: skewX(-6deg); margin-inline-end: .04em; }
+.hero-copy em { font-style: normal; font-synthesis: none; display: inline-block; transform: skewX(-6deg); }
+h1 em { color: var(--gold); margin-inline-end: .04em; }
 h2 { font-size: clamp(2.25rem, 5.7vw, 4rem); line-height: 1.1; letter-spacing: -.018em; }
 h3 { font-size: clamp(1.45rem, 3vw, 1.85rem); line-height: 1.2; }
 .lead { max-width: 29rem; font-size: clamp(1.05rem, 2.5vw, 1.25rem); color: #ded8c9; margin: 1.25rem 0 1.7rem; }
 .button { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; padding: .7rem 1.25rem; background: var(--cash); color: #102317; font-weight: 600; text-decoration: none; border-radius: .35rem; }
 .button:hover { background: #7de79d; }
 .hero-note { color: #d5cbb1; font-size: .875rem; margin: .8rem 0 0; }
-.hero-art { position: relative; overflow: clip; justify-self: center; width: min(100%, 17rem); transform: scaleX(-1); background: radial-gradient(ellipse at 52% 62%, #30271a 0%, #211c16 38%, transparent 68%); }
+.hero-art { position: relative; overflow: clip; justify-self: center; width: min(100%, 17rem); transform: scaleX(-1); background: radial-gradient(ellipse 42% 43% at 52% 54%, #261f16 0%, #1a1713 51%, #131313 100%); }
 /* Align the vertical bar behind the edge of the side-peeking pose. */
 .hero-art::before {
   content: "";
