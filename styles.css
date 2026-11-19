@@ -50,7 +50,6 @@ nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.25rem); font-w
 nav a { text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 .nav-signup { border: 1px solid #686459; border-radius: .35rem; padding: .54rem .75rem; white-space: nowrap; }
-.nav-terms { display: none; }
 .hero { display: grid; align-items: center; padding-block: 2.8rem 1rem; }
 .hero-copy { position: relative; z-index: 1; }
 .label { font: 700 .875rem/1.45 var(--mono); color: var(--deep-green); margin: 0 0 .9rem; }
@@ -121,8 +120,13 @@ figcaption span { display: block; font-weight: 400; }
 .signup-form .button:disabled { background: #383838; color: #ded8c9; }
 .signup-form .button + .field-note { margin-top: .7rem; }
 .footer { border-top: 1px solid #383838; padding-block: 1.15rem; color: #ded8c9; font-size: .875rem; }
+@media (width < 36rem) {
+  .top { flex-direction: column; justify-content: center; gap: .45rem; padding-block: .65rem .85rem; }
+  nav { justify-content: center; gap: 1rem; }
+  .hero-copy { text-align: center; }
+  .hero-copy .lead { margin-inline: auto; }
+}
 @media (min-width: 36rem) {
-  .nav-terms { display: inline; }
   .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .commitments { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
