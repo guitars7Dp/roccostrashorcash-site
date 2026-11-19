@@ -43,28 +43,7 @@ a:focus-visible { outline: 3px solid #b8790a; outline-offset: 5px; }
 .skip:focus { transform: none; }
 .wrap { width: min(100% - 2.5rem, 70rem); margin-inline: auto; }
 .dark { background: var(--dark); color: #f4f1ea; }
-.top, .signup-form .application-fields { display: grid; gap: .45rem; margin: 1rem 0; }
-.signup-form label, .signup-form legend { font-weight: 600; }
-.signup-form input:not([type="checkbox"]) {
-  width: 100%;
-  min-height: 2.75rem;
-  margin-bottom: .35rem;
-  padding: .55rem .7rem;
-  border: 1px solid #8e8576;
-  border-radius: .35rem;
-  background: var(--dark);
-  color: inherit;
-  font: inherit;
-}
-.signup-form .field-note { margin: 0 0 .5rem; font-size: .875rem; }
-.signup-form fieldset { min-width: 0; border: 0; padding: 0; margin: .3rem 0; }
-.platform-options { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-top: .35rem; }
-.platform-options label, .commitment-check { display: flex; align-items: baseline; gap: .45rem; }
-.signup-form input[type="checkbox"] { accent-color: var(--cash); flex: none; }
-.signup-form .button { border: 0; font: inherit; font-weight: 600; }
-.signup-form .button:disabled { background: #383838; color: #ded8c9; }
-.signup-form .button + .field-note { margin-top: .7rem; }
-.footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.top, .footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .top { min-height: 5.4rem; padding-block: .45rem; border-bottom: 1px solid #383838; }
 .brand { flex-shrink: 0; width: clamp(8.75rem, 42vw, 15rem); }
 nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.25rem); font-weight: 600; }
@@ -120,6 +99,27 @@ figcaption { font-weight: 600; margin-top: .55rem; }
 figcaption span { display: block; font-weight: 400; }
 .signup-card { background: var(--panel); border: 1px solid #686459; border-radius: .45rem; padding: 1.15rem; }
 .signup-card p { margin: .4rem 0 1rem; color: #ded8c9; }
+.signup-form .application-fields { display: grid; gap: .45rem; margin: 1rem 0; }
+.signup-form label, .signup-form legend { font-weight: 600; }
+.signup-form input:not([type="checkbox"]) {
+  width: 100%;
+  min-height: 2.75rem;
+  margin-bottom: .35rem;
+  padding: .55rem .7rem;
+  border: 1px solid #8e8576;
+  border-radius: .35rem;
+  background: var(--dark);
+  color: inherit;
+  font: inherit;
+}
+.signup-form .field-note { margin: 0 0 .5rem; font-size: .875rem; }
+.signup-form fieldset { min-width: 0; border: 0; padding: 0; margin: .3rem 0; }
+.platform-options { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-top: .35rem; }
+.platform-options label, .commitment-check { display: flex; align-items: baseline; gap: .45rem; }
+.signup-form input[type="checkbox"] { accent-color: var(--cash); flex: none; }
+.signup-form .button { border: 0; font: inherit; font-weight: 600; }
+.signup-form .button:disabled { background: #383838; color: #ded8c9; }
+.signup-form .button + .field-note { margin-top: .7rem; }
 .footer { border-top: 1px solid #383838; padding-block: 1.15rem; color: #ded8c9; font-size: .875rem; }
 @media (min-width: 36rem) {
   .nav-terms { display: inline; }
