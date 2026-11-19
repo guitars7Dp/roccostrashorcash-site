@@ -138,3 +138,5 @@ figcaption span { display: block; font-weight: 400; }
   .signup-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
   .signup-card { padding: 1.65rem; }
 }
+
+.hero-copy .lead em { color: var(--gold); }
