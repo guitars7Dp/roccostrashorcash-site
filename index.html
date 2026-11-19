@@ -96,12 +96,30 @@
           <h2 id="signup-title">Help test it on your next shift.</h2>
           <p class="section-intro">Help shape Rocco’s Trash or Cash for other delivery drivers. Try it on your iPhone during your regular shifts and tell us what works and what you’d change.</p>
         </div>
-        <div class="signup-card">
-          <h3>Beta application</h3>
-          <p>Share your name, email, and the delivery platforms you drive for.</p>
-          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSfUEi7PlwBI4Fx4oh_HcCTYkeg28oQODmfSbU34LQNRHG_rFQ/viewform">Apply to test</a>
-          <p>We’ll send a personalized TestFlight link to your email.</p>
-        </div>
+        <form class="signup-card signup-form" action="https://formspree.io/f/xaeojzqr" method="post" aria-labelledby="application-title">
+          <h3 id="application-title">Beta application</h3>
+          <div class="application-fields">
+            <label for="applicant-name">Name</label>
+            <input id="applicant-name" name="name" autocomplete="name" required>
+            <label for="applicant-email">Email</label>
+            <input id="applicant-email" name="email" type="email" autocomplete="email" aria-describedby="email-note" required>
+            <p class="field-note" id="email-note">We’ll send a personalized TestFlight link to your email.</p>
+            <fieldset>
+              <legend>Which delivery platforms do you drive for?</legend>
+              <div class="platform-options">
+                <label><input type="checkbox" name="platforms" value="Spark"> Spark</label>
+                <label><input type="checkbox" name="platforms" value="Instacart"> Instacart</label>
+                <label><input type="checkbox" name="platforms" value="Shipt"> Shipt</label>
+              </div>
+            </fieldset>
+            <label class="commitment-check">
+              <input type="checkbox" name="testing_commitment" value="confirmed" required>
+              <span>I can evaluate 10 real orders in 30 days and complete four short weekly questionnaires.</span>
+            </label>
+          </div>
+          <button class="button" type="submit">Apply to test</button>
+          <p class="field-note" role="status"></p>
+        </form>
       </div>
     </section>
 
@@ -112,5 +130,42 @@
       <a href="#main">Back to top</a>
     </div>
   </footer>
+  <script>
+    const application = document.querySelector('.signup-form');
+    const submitButton = application.querySelector('button[type="submit"]');
+    const status = application.querySelector('[role="status"]');
+    const platforms = Array.from(application.querySelectorAll('input[name="platforms"]'));
+
+    for (const platform of platforms) {
+      platform.addEventListener('change', () => platforms[0].setCustomValidity(''));
+    }
+
+    application.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (submitButton.disabled) return;
+      if (!platforms.some((platform) => platform.checked)) {
+        platforms[0].setCustomValidity('Choose at least one delivery platform.');
+        platforms[0].reportValidity();
+        return;
+      }
+
+      submitButton.disabled = true;
+      status.textContent = 'Sending your application…';
+      try {
+        const response = await fetch(application.action, {
+          method: 'POST',
+          body: new FormData(application),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error('Application submission failed');
+        application.reset();
+        status.textContent = 'Thanks! Your application was received.';
+      } catch {
+        status.textContent = 'We couldn’t confirm receipt. Please try again in a moment.';
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
