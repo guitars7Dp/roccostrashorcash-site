@@ -140,3 +140,21 @@ figcaption span { display: block; font-weight: 400; }
 }
 
 .hero-copy .lead em { color: var(--gold); }
+
+@media (min-width: 56rem) and (min-height: 37.5rem) {
+  .showcase-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    padding-block: 1.5rem;
+  }
+
+  .showcase h2 { font-size: clamp(2.25rem, 3.7vw, 3.5rem); }
+
+  .showcase .phones {
+    width: min(50vw, 40rem, calc(100svh - 9.5rem));
+    gap: 1rem;
+  }
+
+  .showcase figcaption { font-size: .9rem; line-height: 1.3; }
+}
