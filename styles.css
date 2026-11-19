@@ -83,10 +83,10 @@ h3 { font-size: clamp(1.45rem, 3vw, 1.85rem); line-height: 1.2; }
 .dark .section-intro { color: #ded8c9; }
 .commitments { display: grid; gap: .85rem; margin-top: 1.7rem; }
 .commitments article { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--deep-green); padding: clamp(1.1rem, 3vw, 2rem); border-radius: .45rem; }
-.commitments article + article { border-top-color: var(--trash); }
+.commitments article + article { border-top-color: #b18a3b; }
 .commitments article p:last-child { margin: .5rem 0 0; color: var(--muted); }
 .count { font: 400 3.6rem/1 var(--display); color: var(--deep-green); margin: 0 0 .75rem; }
-.commitments article + article .count { color: #a73419; }
+.commitments article + article .count { color: #775614; }
 .showcase { background: #ece7d8; border-block: 1px solid var(--line); }
 .showcase-grid, .signup-grid { display: grid; gap: 1.8rem; }
 .signup-grid { align-items: center; }
